@@ -14,9 +14,13 @@ jobs:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
 
+      - name: Set up Rclone
+        uses: AnimMouse/setup-rclone@v1.5.1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+
       - name: Run External Workflow
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          cd ./.github/workflows
-          gh workflow run "main.yml" -R ${{ secrets.REPO }}
+          ./script.sh
