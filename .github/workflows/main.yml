@@ -1,0 +1,20 @@
+name: Use External Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  use-external-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Private Repository
+        uses: actions/checkout@v3.5.2
+        with:
+          repository: ${{ secrets.REPO }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Run External Workflow
+        run: |
+          cd ./.github/workflows
+          gh workflow run "main.yml" -R ${{ secrets.REPO }}
