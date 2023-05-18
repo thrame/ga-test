@@ -14,8 +14,6 @@ jobs:
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
-      - run: rclone lsf "o:tobedeleted/T" --files-only -R
-
       - name: Generate build matrix
         id: set-matrix
         run: |
