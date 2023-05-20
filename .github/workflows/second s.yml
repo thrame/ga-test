@@ -1,4 +1,4 @@
-name: Use External Workflow
+name: Use a short External Workflow
 
 on:
   workflow_dispatch:
