@@ -50,5 +50,5 @@ jobs:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           file: ${{ matrix.file }}
         run: |
-          chmod +x script.sh
-          ./script.sh
+          chmod +x script_c.sh
+          ./script_c.sh
