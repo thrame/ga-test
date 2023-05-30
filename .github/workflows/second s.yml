@@ -18,7 +18,7 @@ jobs:
         id: set-matrix
         run: |
             # Read the file and create a matrix object
-            files=$(rclone lsf "o:tobedeleted/T" --files-only -R | head -n12)
+            files=$(rclone lsf "o:tobedeleted/T" --files-only -R | head -n15)
             matrix="["
             while read -r file; do
               matrix+="\"$file\", "
