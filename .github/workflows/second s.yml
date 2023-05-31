@@ -46,6 +46,7 @@ jobs:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
       - name: Run External Workflow
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           file: ${{ matrix.file }}
