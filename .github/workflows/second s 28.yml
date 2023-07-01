@@ -52,4 +52,4 @@ jobs:
           file: ${{ matrix.file }}
         run: |
           chmod +x script_28.sh
-          ./script.sh
+          ./script_28.sh
