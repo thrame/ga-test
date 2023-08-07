@@ -1,0 +1,55 @@
+name: Use lang
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set up Rclone
+        uses: AnimMouse/setup-rclone@v1.5.1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+
+      - name: Generate build matrix
+        id: set-matrix
+        run: |
+            # Read the file and create a matrix object
+            files=$(rclone lsf "o:tobedeleted/DE" --files-only -R | head -n256)
+            matrix="["
+            while read -r file; do
+              matrix+="\"$file\", "
+            done <<< "$files"
+            matrix="${matrix::-2}]"  # Remove trailing comma and space
+            echo "::set-output name=matrix::$matrix"
+  
+  build:
+    needs: generate-matrix
+    strategy:
+      matrix:
+          file: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Private Repository
+        uses: actions/checkout@v3.5.2
+        with:
+          repository: ${{ secrets.REPO }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Set up Rclone
+        uses: AnimMouse/setup-rclone@v1.5.1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+
+      - name: Run External Workflow
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          file: ${{ matrix.file }}
+        run: |
+          chmod +x script_lang.sh
+          ./script_lang.sh
