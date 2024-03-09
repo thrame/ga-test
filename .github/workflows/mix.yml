@@ -45,6 +45,11 @@ jobs:
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.2
+        with:
+          packages: ffmpeg
+
       - name: Run External Workflow
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
