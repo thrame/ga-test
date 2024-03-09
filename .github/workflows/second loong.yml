@@ -10,7 +10,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -46,7 +46,7 @@ jobs:
           packages: ffmpeg
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -78,7 +78,7 @@ jobs:
           packages: ffmpeg
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -110,7 +110,7 @@ jobs:
           packages: ffmpeg
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -142,7 +142,7 @@ jobs:
           packages: ffmpeg
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -174,7 +174,7 @@ jobs:
           packages: ffmpeg
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.5.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
