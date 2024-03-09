@@ -9,6 +9,11 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.2
+        with:
+          packages: ffmpeg
+          
       - name: Set up Rclone
         uses: AnimMouse/setup-rclone@v1.5.1
         with:
