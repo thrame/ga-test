@@ -10,7 +10,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.8.2
+        uses: AnimMouse/setup-rclone@v1.9.0
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -41,7 +41,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.8.2
+        uses: AnimMouse/setup-rclone@v1.9.0
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
