@@ -25,6 +25,6 @@ jobs:
         uses: juliangruber/merge-pull-request-action@v1
         with:
           github-token: ${{ secrets.GH_TOKEN }}
-          number: ${{ github.pull_number }}
+          number: ${{ github.event.number }}
           method: squash # merge rebase
           repo: ${{ github.repository }}
