@@ -13,8 +13,8 @@ jobs:
         run: |
           rclone config file
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Generate build matrix
         id: set-matrix
@@ -50,8 +50,8 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Run External Workflow
         env:
@@ -83,8 +83,8 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Run External Workflow
         env:
@@ -116,8 +116,8 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Run External Workflow
         env:
@@ -149,8 +149,8 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Run External Workflow
         env:
@@ -182,8 +182,8 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
-          mkdir -p ~/.config/rclone
-          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > ~/.config/rclone/rclone.conf
+          mkdir -p $(dirname $(rclone config file | tail -n1))
+          echo ${{ secrets.RCLONE_CONFIG }} | base64 -d > $(rclone config file | tail -n1)
 
       - name: Run External Workflow
         env:
