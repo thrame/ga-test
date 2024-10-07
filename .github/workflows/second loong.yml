@@ -12,6 +12,7 @@ jobs:
       - name: Set up Rclone
         run: |
           sudo -v ; curl https://rclone.org/install.sh | sudo bash
+          mkdir -p ~/.config/rclone
           echo $rclone_config | base64 -d > ~/.config/rclone/rclone.conf
         env:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
