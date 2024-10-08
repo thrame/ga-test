@@ -36,7 +36,7 @@ jobs:
     steps:
 
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -69,7 +69,7 @@ jobs:
     steps:
 
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -102,7 +102,7 @@ jobs:
     steps:
 
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -135,7 +135,7 @@ jobs:
     steps:
 
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -168,7 +168,7 @@ jobs:
     steps:
 
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
