@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout Private Repository
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
