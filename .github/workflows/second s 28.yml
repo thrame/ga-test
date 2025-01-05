@@ -41,10 +41,13 @@ jobs:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.4.2
-        with:
-          packages: ffmpeg
+      - name: Run Install
+        run: sudo apt install ffmpeg -y
+
+#      - name: Cache APT packages
+#        uses: awalsh128/cache-apt-pkgs-action@v1.4.2
+#        with:
+#          packages: ffmpeg
 
       - name: Set up Rclone
         uses: AnimMouse/setup-rclone@v1.10.2
