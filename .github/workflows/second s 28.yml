@@ -18,7 +18,7 @@ jobs:
         id: set-matrix
         run: |
             # Read the file and create a matrix object
-            files=$(rclone lsf "d:28" --files-only -R | head -n256)
+            files=$(rclone lsf "o:tobedeleted/Vidin" --files-only -R | head -n256)
             matrix="["
             while read -r file; do
               matrix+="\"$file\", "
