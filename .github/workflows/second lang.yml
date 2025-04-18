@@ -10,7 +10,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.10.2
+        uses: AnimMouse/setup-rclone@v1.11.0
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
@@ -45,7 +45,7 @@ jobs:
         run: sudo apt install ffmpeg -y
 
       - name: Set up Rclone
-        uses: AnimMouse/setup-rclone@v1.10.2
+        uses: AnimMouse/setup-rclone@v1.11.0
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
