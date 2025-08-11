@@ -42,7 +42,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.1
+        uses: awalsh128/cache-apt-pkgs-action@v1.5.3
         with:
           packages: ffmpeg
 
