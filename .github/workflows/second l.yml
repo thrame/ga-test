@@ -41,7 +41,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.3
+        uses: awalsh128/cache-apt-pkgs-action@v1.6.0
         with:
           packages: ffmpeg
 
@@ -73,7 +73,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.3
+        uses: awalsh128/cache-apt-pkgs-action@v1.6.0
         with:
           packages: ffmpeg
 
@@ -105,7 +105,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.3
+        uses: awalsh128/cache-apt-pkgs-action@v1.6.0
         with:
           packages: ffmpeg
 
@@ -137,7 +137,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.3
+        uses: awalsh128/cache-apt-pkgs-action@v1.6.0
         with:
           packages: ffmpeg
 
